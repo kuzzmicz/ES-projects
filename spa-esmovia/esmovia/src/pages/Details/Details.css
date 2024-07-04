@@ -1,0 +1,10 @@
+.details-design{
+    width: 100vw;
+    height: 82vh;
+
+    background-color:lightpink;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -15,6 +15,7 @@ function Header() {
       <Surfer path={"/profile"} destiny={"Profile"} />
       <Surfer path={"/register"} destiny={"Register"} />
       <Surfer path={"/admin"} destiny={"Admin"} />
+      <Surfer path={"/details"} destiny={"Details"} />
     </div>
   );
 }
