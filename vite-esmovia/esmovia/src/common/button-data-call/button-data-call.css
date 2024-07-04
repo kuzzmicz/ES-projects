@@ -1,0 +1,15 @@
+.button-design {
+
+    height: 4em;
+    width: 12em;
+
+    border-radius: 1em;
+    font-size: 30px;
+    font-weight: bold;
+    color: grey;
+    background-color: white;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

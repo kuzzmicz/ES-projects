@@ -1,0 +1,24 @@
+.counter-design {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1em;
+    font-size: 40px;
+    height: 3em;
+    width: 7.5em;
+    background-color: white;
+    color: grey;
+    border: black 0.2em solid;
+    font-weight: bold;
+    
+}
+
+.symbol{
+    padding-left: 50px;
+    padding-right:50px;
+    color: lightsalmon;
+    font-size: 50px;
+}
