@@ -3,9 +3,27 @@
     height: 82vh;
     width: 100vw;
 
-    background-color: lightseagreen;
+    background-color: beige;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.login-button-design {
+
+    height: 4em;
+    width: 12em;
+
+    border-radius: 0.5em;
+    background-color: crimson;
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.login-button-design:hover {
+    transition: 1s;
+    background-color: darkred;
 }

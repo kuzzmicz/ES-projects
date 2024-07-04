@@ -2,24 +2,23 @@ import { useState, useEffect } from "react";
 import CInput from "../../common/Cinput/Cinput";
 import "./Login.css";
 import checkE from "../../utils/errors";
+import { LoginMe } from "../../services/api-calls";
 
 function Login() {
   const [credentials, setCredentials] = useState({
-    email: "",
+    name: "",
     password: "",
   });
 
   const [credentialsErrors, setCredentialsErrors] = useState({
-    emailError: "",
+    nameError: "",
     passwordError: "",
   });
 
   const inputHandler = (e) => {
-    //Binding process
     setCredentials((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
-      //email : maciej@gmail.com
     }));
   };
 
@@ -34,32 +33,46 @@ function Login() {
     }));
   };
 
-  // useEffect(()=>{
+  const loginFunction = async () => {
 
-  //     console.log(credentials)
+    LoginMe(credentials)
+        .then(res => console.log(res))
+        .catch(error => console.log(error))
+  };
 
-  // }, [credentials])
 
   return (
     <div className="login-design">
       <CInput
-        type="email"
-        name="email"
+        type="text"
+        name="name"
         placeholder=""
-        design={`${credentialsErrors.emailError !== "" ? "error-input" : ""} basic-input`}
+        design={`${
+          credentialsErrors.nameError !== "" ? "error-input" : ""
+        } basic-input`}
         emitFunction={inputHandler}
         errorCheck={errorCheck}
       />
-      {credentialsErrors.emailError}
+      {credentialsErrors.nameError}
       <CInput
         type="password"
         name="password"
         placeholder=""
-        design={`${credentialsErrors.passwordError !== "" ? "error-input" : ""} basic-input`}
+        design={`${
+          credentialsErrors.passwordError !== "" ? "error-input" : ""
+        } basic-input`}
         emitFunction={inputHandler}
         errorCheck={errorCheck}
       />
       {credentialsErrors.passwordError}
+      {credentials.name !== "" &&
+        credentials.password !== "" &&
+        credentialsErrors.nameError === "" &&
+        credentialsErrors.passwordError === "" && (
+          <div className="login-button-design" onClick={loginFunction}>
+            Login me!
+          </div>
+        )}
     </div>
   );
 }
