@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^29.7.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "name": "javascript-esmovia",
+  "version": "1.0.0",
+  "main": "factorial.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
