@@ -1,0 +1,10 @@
+.footer-design{
+    height: 8vh;
+    width: 100vw;
+    
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
