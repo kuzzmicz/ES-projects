@@ -1,0 +1,10 @@
+.home-design{
+    height: 82vh;
+    width: 100vw; 
+
+    background-color: palegoldenrod;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
