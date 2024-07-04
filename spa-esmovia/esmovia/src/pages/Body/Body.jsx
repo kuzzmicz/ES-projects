@@ -3,6 +3,7 @@ import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Profile from "../Profile/Profile";
 import Register from "../Register/Register";
+import Admin from "../Admin/Admin";
 
 function Body() {
   return (
@@ -13,6 +14,7 @@ function Body() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </>
   );
