@@ -1,46 +1,67 @@
-
 import { useState, useEffect } from "react";
 import CInput from "../../common/Cinput/Cinput";
 import "./Login.css";
+import checkE from "../../utils/errors";
 
-function Login () {
+function Login() {
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
-    const [credentials, setCredentials] = useState({
-        email: "",
-        password: ""
-    })
+  const [credentialsErrors, setCredentialsErrors] = useState({
+    emailError: "",
+    passwordError: "",
+  });
 
-    const inputHandler = (e) => {
-        setCredentials((prevState) => ({
-            ...prevState,
-            [e.target.name] : e.target.value
-        }))
-    }
+  const inputHandler = (e) => {
+    //Binding process
+    setCredentials((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+      //email : maciej@gmail.com
+    }));
+  };
 
-    useEffect(()=>{
+  const errorCheck = (e) => {
+    let error = "";
 
-        console.log(credentials)
+    error = checkE(e.target.name, e.target.value);
 
-    }, [credentials])
+    setCredentialsErrors((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: error,
+    }));
+  };
 
-    return (
-        <div className="login-design">
-            <CInput 
-                type="email"
-                name="email"
-                placeholder=""
-                design="basic-input"
-                emitFunction={inputHandler}
-            />
-            <CInput 
-                type="password"
-                name="password"
-                placeholder=""
-                design="basic-input"
-                emitFunction={inputHandler}
-            />
-        </div>
-    )
+  // useEffect(()=>{
+
+  //     console.log(credentials)
+
+  // }, [credentials])
+
+  return (
+    <div className="login-design">
+      <CInput
+        type="email"
+        name="email"
+        placeholder=""
+        design={`${credentialsErrors.emailError !== "" ? "error-input" : ""} basic-input`}
+        emitFunction={inputHandler}
+        errorCheck={errorCheck}
+      />
+      {credentialsErrors.emailError}
+      <CInput
+        type="password"
+        name="password"
+        placeholder=""
+        design={`${credentialsErrors.passwordError !== "" ? "error-input" : ""} basic-input`}
+        emitFunction={inputHandler}
+        errorCheck={errorCheck}
+      />
+      {credentialsErrors.passwordError}
+    </div>
+  );
 }
 
 export default Login;
