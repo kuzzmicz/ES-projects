@@ -1,10 +1,15 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
+import { myContext } from "../../app/context";
 import CInput from "../../common/Cinput/Cinput";
 import "./Login.css";
 import checkE from "../../utils/errors";
 import { LoginMe } from "../../services/api-calls";
 
 function Login() {
+
+
+  const {state, SetAuth} = useContext(myContext)
+
   const [credentials, setCredentials] = useState({
     name: "",
     password: "",
@@ -16,9 +21,11 @@ function Login() {
   });
 
   const inputHandler = (e) => {
+    //Binding process
     setCredentials((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
+      //email : maciej@gmail.com
     }));
   };
 
@@ -36,10 +43,17 @@ function Login() {
   const loginFunction = async () => {
 
     LoginMe(credentials)
-        .then(res => console.log(res))
+        .then(res => {
+          SetAuth("token", res.token)
+        })
         .catch(error => console.log(error))
   };
 
+  // useEffect(()=>{
+
+  //     console.log(credentials)
+
+  // }, [credentials])
 
   return (
     <div className="login-design">
