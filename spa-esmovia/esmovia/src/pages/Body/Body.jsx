@@ -3,20 +3,24 @@ import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Profile from "../Profile/Profile";
 import Register from "../Register/Register";
-import Admin from "../Admin/Admin";
-import Details from "../Details/Details";
+
+import { myContext } from "../../app/context";
+import { useContext } from "react";
 
 function Body() {
+  const { state } = useContext(myContext);
   return (
     <>
       <Routes>
-        <Route path="*" element={<Navigate to={"/"} replace/>} />
+        <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/details" element={<Details />} />
+
+        {}
+        {state.auth.token !== "" ? (
+          <Route path="/profile" element={<Profile />} />
+        ) : null}
       </Routes>
     </>
   );
