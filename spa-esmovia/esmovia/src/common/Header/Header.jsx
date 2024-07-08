@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { myContext } from "../../app/context";
 import { jwtDecode } from "jwt-decode";
 import esmovia from "../../assets/esmovia.jpg";
-import CInput from "../CInput/CInput";
+import CInput from "../Cinput/Cinput";
 
 function Header() {
 
