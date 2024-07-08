@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { bringMovies, searchMovieCriteria } from "../../services/api-calls";
+import { myContext } from "../../app/context";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
-import { bringMovies } from "../../services/api-calls";
 
 function Home() {
   const [movies, setMovies] = useState([]);
+  const {state, SetAuth} = useContext(myContext)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (movies.length === 0) {
@@ -14,26 +18,42 @@ function Home() {
           })
           .catch((error) => console.log(error));
       };
-      setTimeout(() => {
         getMovies();
-      }, 2000);
     }
 
     console.log(movies);
   }, [movies]);
 
+  useEffect(()=>{
+   
+    if(state !== ""){
+
+      const bringSearchedMovies = async () => {
+
+        searchMovieCriteria(state.global.search)
+          .then(res => {
+            setMovies(res.results)
+          })
+          .catch(error => console.log(error))
+
+      }
+
+      bringSearchedMovies()
+    }
+
+  }, [state])
+
+  const selectMovie = (movie) => {
+    SetAuth("movie", movie)
+    navigate("/moviedetail")
+  }
+
   return (
     <div className="home-design">
       {movies.length > 0 ? (
-        <div className="movies-container">
+        <div>
           {movies.map((movie) => {
-            return (
-              <div className="movie-card" key={movie.id}>
-                <img src={"https://image.tmdb.org/t/p/w500/"+ movie.poster_path} alt={movie.title} />
-                <h3>{movie.title}</h3>
-                <p>{movie.release_date}</p>
-              </div>
-            );
+            return <div onClick={()=>selectMovie(movie)} key={movie.id}>{movie.title}</div>;
           })}
         </div>
       ) : (
