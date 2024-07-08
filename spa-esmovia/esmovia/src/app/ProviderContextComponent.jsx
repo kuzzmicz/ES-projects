@@ -3,17 +3,19 @@ import { myContext } from "./context";
 
 export const MyProvider = ({ children }) => {
   const [state, setState] = useState({
-    auth: {
+    global: {
       token: "",
       name: "",
+      search: "",
+      movie: {}
     },
   });
 
   const SetAuth = (target, payload) => {
     setState((prevState) => ({
       ...prevState,
-      auth: {
-        ...state.auth,
+      global: {
+        ...state.global,
         [target]: payload,
       },
     }));
