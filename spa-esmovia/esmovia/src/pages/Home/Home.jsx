@@ -51,9 +51,11 @@ function Home() {
   return (
     <div className="home-design">
       {movies.length > 0 ? (
-        <div>
+        <div className="movies-container">
           {movies.map((movie) => {
-            return <div onClick={()=>selectMovie(movie)} key={movie.id}>{movie.title}</div>;
+            return <div className="movie-card" onClick={()=>selectMovie(movie)} key={movie.id}>
+              <img src={"https://image.tmdb.org/t/p/w500/"+ movie.poster_path} alt={movie.title} />
+              {movie.title}</div>
           })}
         </div>
       ) : (
