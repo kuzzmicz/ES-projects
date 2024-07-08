@@ -33,3 +33,12 @@
 .second-movie-container p{
     font-size: 30px;
 }
+
+@media (max-width: 1200px) {
+    .second-movie-container{
+        text-align:left;
+        display:block;
+        height: 60vh;
+        padding: 0px 50px 30px 50px;
+    }
+  }
