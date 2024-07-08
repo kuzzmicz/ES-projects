@@ -9,7 +9,7 @@ export async function LoginMe(credentials) {
     body: JSON.stringify({
       username: credentials.name,
       password: credentials.password,
-      expiresInMins: 30, // optional, defaults to 60
+      expiresInMins: 30, 
     }),
   });
 
