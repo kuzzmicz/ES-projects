@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { Answer, CharacterResult } from "../interfaces";
 import bringCharacters from "../services/api-calls";
@@ -10,7 +11,6 @@ function Home() {
 
   useEffect(() => {
     if (characters?.length === 0) {
-      //we call the characters.....
       const fetchDataRickMorty = async (): Promise<any> => {
         const fetched: Answer = await bringCharacters();
 
@@ -28,20 +28,28 @@ function Home() {
     }
   }, [characters]);
 
-
-
   return (
-    <>
+    <div className="container">
+      <h1 className="title">Rick and Morty Characters</h1>
       {characters?.length > 0 ? (
-        <div>
-          {characters.slice(0, 6).map((character) => {
-            return <div key={character.id}>{character.name}</div>;
+        <div className="characters-grid">
+          {characters.slice(0, 18).map((character) => {
+            return (
+              <div key={character.id} className="character-card">
+                <div className="character-name">{character.name}</div>
+                <img src={character.image}/>
+                <div className="character-text"><b>Gender:</b> {character.gender}</div>
+                <div className="character-text"><b>Species:</b> {character.species}</div>
+                <div className="character-text"><b>Loc: </b>{character.location.name}</div>
+                <div className="character-text"><b>Status: </b>{character.status}</div>
+              </div>
+            );
           })}
         </div>
       ) : (
-        <div>{msgError}</div>
+        <div className="error-message">{msgError}</div>
       )}
-    </>
+    </div>
   );
 }
 

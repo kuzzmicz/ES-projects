@@ -1,0 +1,68 @@
+@font-face {
+    font-family: "gochihand";
+    src: url(../assets//fonts/GochiHand-Regular.ttf);
+  }
+  
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: "gochihand";
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  .characters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .character-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .character-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .character-name {
+    font-size: 2rem;
+    color: #dbb434;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: "gochihand";
+  }
+  .character-text{
+    font-size: 1.5rem;
+    color: #000000;
+    margin-top: 10px;
+    max-width: 300px;
+  }
+  
