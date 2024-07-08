@@ -2,7 +2,7 @@
     width: 100vw;
     height: 82vh;
 
-    background-color:lightpink;
+    background-color:rgb(255, 253, 207);
 
     display: flex;
     align-items: center;
@@ -14,6 +14,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-height: 82vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .second-movie-container{
