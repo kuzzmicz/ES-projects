@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { myContext } from "../../app/context";
-import CInput from "../../common/Cinput/Cinput";
+import CInput from "../../common/CInput/CInput";
 import "./Login.css";
 import checkE from "../../utils/errors";
 import { LoginMe } from "../../services/api-calls";
@@ -49,11 +49,6 @@ function Login() {
         .catch(error => console.log(error))
   };
 
-  // useEffect(()=>{
-
-  //     console.log(credentials)
-
-  // }, [credentials])
 
   return (
     <div className="login-design">

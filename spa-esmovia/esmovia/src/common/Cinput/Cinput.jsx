@@ -1,4 +1,4 @@
-import "./Cinput.css"
+import "./CInput.css"
 
 function CInput ({type, name, placeholder, design, emitFunction, errorCheck}) {
 

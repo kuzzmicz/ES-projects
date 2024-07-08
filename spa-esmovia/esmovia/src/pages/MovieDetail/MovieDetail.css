@@ -8,3 +8,25 @@
     align-items: center;
     justify-content: center;
 }
+
+.movie-container{
+    padding:150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-movie-container{
+    text-align:left;
+    display:block;
+    height: 60vh;
+    padding: 30px 50px 30px 50px;
+}
+
+.second-movie-container h1{
+    font-size: 80px;
+}
+
+.second-movie-container p{
+    font-size: 30px;
+}
