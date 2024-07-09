@@ -15,7 +15,8 @@ function MovieDetail () {
         <div className="movie-container">
         <img src={"https://image.tmdb.org/t/p/w500/"+state.global.movie?.poster_path}/>
         <div className="second-movie-container"><h1>{state.global.movie?.title}</h1>
-        <p>{state.global.movie?.overview}</p></div>
+        <p>{state.global.movie?.overview}</p><br/><br/><br/>
+        <p>Release date: {state.global.movie?.release_date}</p></div>
         </div>
         </div>
     )
