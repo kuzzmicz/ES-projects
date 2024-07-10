@@ -3,15 +3,26 @@
     padding: 0;
     box-sizing: border-box;
   }
+  @font-face {
+    font-family: 'blackops'; 
+    src: url('../../assets/fonts/BlackOpsOne-Regular.ttf'); 
+  }
+  
+  .home-design {
+    font-family: 'blackops', sans-serif; 
+  }
 
+  .welcome-text{
+    width: 70vw;
+  }
 .home-design{
    font-size: 5em;
-
+  flex-direction: column;
     display: flex;
   justify-content: center;
   align-items: center;
   height: 82vh;
   width: 100vw;
-  background: linear-gradient(135deg, #4b0300 0%, #5e0606 100%);
+  background: linear-gradient(135deg, #440402 0%, #900b0b 100%);
   padding: 20px;
 }
