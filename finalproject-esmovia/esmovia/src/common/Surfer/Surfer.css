@@ -1,0 +1,11 @@
+.surfer-design{
+    margin: 1em;
+    color:white;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.surfer-design:hover{
+    color:black;
+}
