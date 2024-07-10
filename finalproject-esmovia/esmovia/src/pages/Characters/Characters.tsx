@@ -20,11 +20,14 @@ function Characters(){
     return (
      <div className="characters-design">
          <h1>Resident Evil Characters</h1>
-      <ul>
+         <div className="characters-container">
         {characters.map(character => (
-          <li key={character.id}>{character.name} - {character.game}</li>
+            <div className="character-container" key={character.id}>
+          <div className="image-container"><img src={character.image}/><div className="text-container"><b>{character.name}</b><br/>{character.game}<br/>{character.gender}</div>
+            </div>
+          </div>
         ))}
-      </ul>
+        </div>
      </div>
     )
 }
