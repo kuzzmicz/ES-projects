@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.home-container{
+   font-size: 5em;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 82vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #4b0300 0%, #5e0606 100%);
+  padding: 20px;
+}
