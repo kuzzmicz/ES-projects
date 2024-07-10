@@ -1,6 +1,6 @@
 import "./Surfer.css";
 import { useNavigate } from "react-router-dom";
-function Surfer({path}:any, {destiny}:any){
+function Surfer({path, destiny}:any){
 const navigate = useNavigate();
 
 return (

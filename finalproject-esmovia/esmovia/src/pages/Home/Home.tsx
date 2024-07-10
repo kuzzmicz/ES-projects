@@ -4,7 +4,7 @@ function Home(){
 
 
     return (
-     <div className="home-container">
+     <div className="home-design">
          HOME PAGE
      </div>
     )
