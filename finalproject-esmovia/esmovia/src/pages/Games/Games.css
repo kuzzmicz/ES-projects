@@ -6,7 +6,7 @@
 
 .games-design{
    font-size: 5em;
-
+   flex-direction: column;
     display: flex;
   justify-content: center;
   align-items: center;
@@ -14,4 +14,7 @@
   width: 100vw;
   background: linear-gradient(135deg, #4b0300 0%, #5e0606 100%);
   padding: 20px;
+}
+h1{
+   font-size: 1.5em;
 }
