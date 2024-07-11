@@ -19,11 +19,12 @@ function Games(){
     return (
      <div className="games-design">
          <h1>Resident Evil Games</h1>
-      <ul>
+        <div className="games-container">
         {games.map(game => (
-          <li key={game.id}>{game.title} - {game.releaseYear}</li>
+          <div key={game.id} className="game-container">{game.title} - {game.releaseYear}
+          <img src={game.image}/></div>
         ))}
-      </ul>
+        </div>
      </div>
     )
 }
