@@ -18,12 +18,12 @@
 
 .characters-container{
     height: 70vh;
-    width: 95vw;
+    max-width: 95vw;
     overflow-y:hidden;
     overflow-x: scroll;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; 
     gap: 10px;
 }
 
