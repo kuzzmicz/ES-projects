@@ -6,6 +6,8 @@ function Header(){
 return(
     
     <div className="header-design">
+        <Surfer path={"/login"} destiny={"Login"}/>
+        <Surfer path={"/register"} destiny={"Register"}/>
           <div onClick={()=>navigate("/")}><img src="logo.png" alt="umbrella logo"/></div>
         <Surfer destiny={"Home"} path={"/"} />
         <Surfer path={"/characters"} destiny={"Characters"}/>
