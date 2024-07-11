@@ -25,6 +25,7 @@
     align-items: center;
     justify-content: flex-start; 
     gap: 10px;
+    margin-top:15px;
 }
 
 .character-container{
@@ -32,8 +33,10 @@
     padding: 10px;
     width: 25vw;
     font-size: 3em;
-    height: 70vh;
+    height: 65vh;
 }
 .character-container img{
     width: 20vw;
+   height: 20vw; 
+   object-fit: cover;
 }

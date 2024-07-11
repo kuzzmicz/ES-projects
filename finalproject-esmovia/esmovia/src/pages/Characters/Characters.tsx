@@ -23,7 +23,7 @@ function Characters(){
          <div className="characters-container">
         {characters.map(character => (
             <div className="character-container" key={character.id}>
-          <div className="image-container"><img src={character.image}/><div className="text-container"><b>{character.name}</b><br/>{character.game}<br/>{character.gender}</div>
+          <div className="image-container"><img src={character.image}/><div className="text-container"><b>{character.name}</b><br/>{character.game}</div>
             </div>
           </div>
         ))}
