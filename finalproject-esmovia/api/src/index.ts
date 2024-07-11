@@ -17,13 +17,19 @@ const characters = [
   { id: 8, name: 'Barry Burton', game: 'Resident Evil', image:  'https://i.pinimg.com/474x/2b/fc/18/2bfc1853e52b1e8da0211421b9dc8b00.jpg', gender: "male"},
   { id: 9, name: 'Ada Wong', game: 'Resident Evil 2', image: 'https://i.pinimg.com/736x/1b/77/fa/1b77fa3601bb8b7c4efa5950e0cf62ad.jpg', gender: "female" },
   { id: 10, name: 'Sherry Birkin', game: 'Resident Evil 2', image:  'https://i.pinimg.com/736x/ed/fc/c6/edfcc65afdff60c00d510a583604b3aa.jpg', gender: "female"},
-  { id: 11, name: 'HANK', game: 'Resident Evil 2', image:  'https://i.pinimg.com/736x/3f/b8/88/3fb8886a6185533522908750faf09ee6.jpg', gender: "male"},
+  { id: 11, name: 'HANK', game: 'Resident Evil 2', image:  'https://preview.redd.it/about-hunk-v0-hiha0zkpinhb1.jpg?auto=webp&s=48b80baa6064f266af173b08d6ab2cfe0927cba6', gender: "male"},
   { id: 12, name: 'Carlos Oliveira', game: 'Resident Evil 3:Nemesis', image:  'https://i.pinimg.com/736x/35/27/4d/35274dbf61427ba64c76488189e74fdf.jpg', gender: "male"},
   { id: 13, name: 'Nikolai Zinoviev', game: 'Resident Evil 3:Nemesis', image:  'https://i.pinimg.com/736x/73/95/cd/7395cd85a0dae265d0543166871ae87a.jpg', gender: "male"},
-  { id: 14, name: 'Rebecca Chambers', game: 'Resident Evil', image:  'https://i.pinimg.com/736x/74/18/2a/74182a32db584ab97807cb8c69769406.jpg', gender: "female"},
-  { id: 15, name: 'Billy Coen', game: 'Resident Evil 0', image:  'https://i.pinimg.com/736x/33/e0/b4/33e0b4fab03a954b01062e232490dd56.jpg', gender: "male"},
-  { id: 16, name: 'Barry Burton', game: 'Resident Evil', image:  'https://i.pinimg.com/474x/2b/fc/18/2bfc1853e52b1e8da0211421b9dc8b00.jpg', gender: "male"},
-
+  { id: 14, name: 'Steve Burnside', game: 'Resident Evil CODE:Veronica', image:  'https://residentevilpodcast.com/wp-content/uploads/2021/08/steveburnside.jpg', gender: "male"},
+  { id: 15, name: 'Ashley Graham', game: 'Resident Evil 4', image:  'https://i.pinimg.com/originals/be/9b/6a/be9b6aa3064ee54c1af4a45515ab8ba0.jpg', gender: "female"},
+  { id: 16, name: 'Ingrid Hunnigan', game: 'Resident Evil 4', image:  'https://i.pinimg.com/564x/e8/44/d8/e844d8b64bacce82224590786c3692d9.jpg', gender: "female"},
+  { id: 17, name: 'Jack Krauser', game: 'Resident Evil 4', image:  'https://pbs.twimg.com/media/FV4RjBOWQAYWUcV.jpg', gender: "male"},
+  { id: 18, name: 'Jessica Sherawat', game: 'Resident Evil Revelations', image:  'https://i.pinimg.com/736x/de/05/c4/de05c47e72a150262c0c07b3b9ebb064.jpg', gender: "female"},
+  { id: 19, name: 'Sheva Alomar', game: 'Resident Evil 5', image:  'https://i.pinimg.com/474x/8d/ee/e5/8deee5dddfacab21e40f43a8d0f56926.jpg', gender: "female"},
+  { id: 20, name: 'Moira Burton', game: 'Resident Evil Revelations 2', image:  'https://i.pinimg.com/originals/79/8a/62/798a628fa1cc59a187856a8157a11894.png', gender: "female"},
+  { id: 21, name: 'Natalia Korda', game: 'Resident Evil Revelations 2', image:  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUpYJVzE8Kw9jo13as-1lKXtJra7APIuNf3f1dwpmQTFxmfyJkXJI_6oZXq5f9XlAHc_4&usqp=CAU', gender: "female"},
+  { id: 22, name: 'Alex Wesker', game: 'Resident Evil Revelations 2', image:  'https://i.pinimg.com/originals/f5/5d/0e/f55d0e1fafdc96fc1ffd08e74169360a.jpg', gender: "female"},
+  { id: 23, name: 'Jake Muller', game: 'Resident Evil 6', image:  'https://i.pinimg.com/564x/24/67/5d/24675db2375d3f0950e1a35757211f46.jpg', gender: "male"},
 ];
 
 const games = [
