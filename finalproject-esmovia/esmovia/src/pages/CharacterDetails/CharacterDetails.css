@@ -1,0 +1,36 @@
+.character-details-design{
+width: 100vw;
+height: 82vh;
+background-color: rgb(87, 0, 0);
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+flex-direction: column;
+}
+
+.image-name-container{
+    height: 70vh;
+    width:40vw;
+}
+.image-name-container img{
+    margin-top: 20px;
+    width: 30vw;
+   height: 30vw; 
+   object-fit: cover;
+}
+.info-container{
+    height: 70vh;
+    width:60vw;
+    padding: 50px;
+    text-align: left;
+}
+.info-container p {
+    font-size: 2em;
+}
+.character-details-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
