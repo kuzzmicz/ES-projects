@@ -11,4 +11,5 @@ export interface Character {
     title: string;
     releaseYear: number;
     image:string;
+    desc: string;
   }
