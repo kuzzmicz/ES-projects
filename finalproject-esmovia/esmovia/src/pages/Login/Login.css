@@ -5,3 +5,15 @@
     padding: 20px;
     color: black;
 }
+
+.login-design input {
+    width: 20vw;
+    height: 6vh;
+    font-size: 2em;
+}
+
+.login-design button {
+    width: 10vw;
+    height: 6vh;
+    font-size: 2em;
+}

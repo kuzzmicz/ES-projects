@@ -5,6 +5,7 @@
   }
 
 .characters-design{
+  text-align:center;
    font-size: 1em;
     flex-direction: column;
     display: flex;

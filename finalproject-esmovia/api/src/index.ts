@@ -142,14 +142,19 @@ app.post('/api/register', (req: Request, res: Response) => {
 
 app.post('/api/login', (req: Request, res: Response) => {
   const { username, password } = req.body;
+
+  console.log("Login request received:", { username, password });
+
   const user = users.find(user => user.username === username && user.password === password);
+
   if (user) {
-    res.json({ message: 'Login successful', userId: user.id });
+      console.log("User found:", user);
+      res.json({ message: 'Login successful', userId: user.id });
   } else {
-    res.status(400).json({ message: 'Invalid username or password' });
+      console.log("Invalid login attempt:", { username, password });
+      res.status(400).json({ message: 'Invalid username or password' });
   }
 });
-
 app.post('/api/characters/:id/comment', (req: Request, res: Response) => {
   const { userId, comment } = req.body;
   const characterId = parseInt(req.params.id, 10);
