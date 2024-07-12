@@ -7,10 +7,13 @@ import "./CharacterDetails.css";
 function CharacterDetails() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const [isFavorite, setFavorite] = useState(false);
   const [character, setCharacter] = useState<Character | null>(null);
   const [comments, setComments] = useState<{ characterId: number, comment: string }[]>([]);
   const [comment, setComment] = useState('');
   const userId = localStorage.getItem('userId');
+  const username = localStorage.getItem('username');
+  const [commentsView, setCommentsView] = useState(false);
 
   useEffect(() => {
     if (!id) {
@@ -35,6 +38,10 @@ function CharacterDetails() {
     fetchCharacter();
   }, [id, navigate]);
 
+  const toCommentsClick = () => {
+    setCommentsView(!commentsView);
+}
+
   const handleCommentSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!id) {
@@ -54,6 +61,7 @@ function CharacterDetails() {
   };
 
   const handleAddToFavorites = async () => {
+
     if (!id) {
       console.error('Character ID is undefined');
       return;
@@ -63,6 +71,7 @@ function CharacterDetails() {
       try {
         await axios.post(`http://localhost:3000/api/users/${userId}/favorites`, { characterId: character.id });
         alert('Character added to favorites');
+        setFavorite(true);
       } catch (error) {
         console.error('Error adding to favorites', error);
       }
@@ -81,21 +90,56 @@ function CharacterDetails() {
       <img src={character.image}/>
       </div>
       <div className="info-container">
+
+      {!commentsView ? (
+        <>
+        
+      {!isFavorite  ? (
+        <>
       <button onClick={handleAddToFavorites}>⭐</button>
-      <p><b>First appearance: </b>{character.game}</p>
-      <p><b>Gender: </b>{character.gender}</p>
+      </>
+      ) :(
+        <>
+        <button onClick={handleAddToFavorites}>❌</button>
+        </>
+      )}
       
+      <p><b>First appearance: </b>{character.game}</p>
+      <p><b>Gender: </b>{character.gender}</p><br/>
+      <p>{character.desc}</p><br/>
+      <p><b>Status: </b>{character.status}</p>
+      </>
+      ) : (
+        <>
+        <h1>COMMENTS</h1>
+        <div className="comments-container">
+        <form onSubmit={handleCommentSubmit}>
+<textarea value={comment} onChange={(e) => setComment(e.target.value)} required />
+<button type="submit" className="add-comment-button">ADD</button>
+</form>
+<ul>
+{comments.map((c, index) => (
+  <span className="comment"><li key={index}><span className="username">{username}</span>: {c.comment}</li></span>
+))}
+</ul></div>
+        </>
+    )}
+
       </div></div>
-      <h2>Comments</h2>
-      <form onSubmit={handleCommentSubmit}>
-        <textarea value={comment} onChange={(e) => setComment(e.target.value)} required />
-        <button type="submit">Add Comment</button>
-      </form>
-      <ul>
-        {comments.map((c, index) => (
-          <li key={index}>{c.comment}</li>
-        ))}
-      </ul>
+
+      {commentsView ? (
+             <>
+             <button className="change-view-button" onClick={toCommentsClick}>▲ TO INFORMATION ▲</button>
+             </>
+            ) : (
+             <>
+                <button className="change-view-button" onClick={toCommentsClick}>▲ TO COMMENTS ▲</button>
+               </>
+            ) 
+            
+        
+        }
+      
     </div>
   );
 }

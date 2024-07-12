@@ -41,3 +41,32 @@
     justify-content: center;
     flex-direction: row;
 }
+.username{
+    color: rgb(255, 70, 70);
+    font-weight: bold;
+}
+.change-view-button{
+
+    font-size: 1.5em;
+
+}
+.add-comment-button{
+    padding: 20px;
+}
+textarea{
+    font-size: 1.5em;
+    margin-top: 40px;
+    margin-right: 20px
+}
+.comment{
+    font-size: 1.5em;
+}
+.comments-container{
+    background-color: rgb(50, 0, 0);
+    margin-top: 15px;
+    padding: 15px;
+}
+
+li{
+    list-style-type:none;
+}

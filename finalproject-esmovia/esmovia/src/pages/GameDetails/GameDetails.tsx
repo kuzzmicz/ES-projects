@@ -7,9 +7,11 @@ import { useState, useEffect} from "react";
 function GameDetails(){
     const {id} = useParams<{id: string}>();
     const navigate = useNavigate();
+    const [commentsView, setCommentsView] = useState(false);
     const [game, setGame] = useState<Game | null>(null);
     const [comments, setComments] = useState<{gameId: number, comment: string}[]>([]);
     const userId = localStorage.getItem('userId');
+    const username = localStorage.getItem('username');
     const [comment, setComment] = useState('');
     useEffect(()=>{
     if(!id){
@@ -32,6 +34,9 @@ function GameDetails(){
     fetchGame();
     }, [id, navigate]);
 
+    const toCommentsClick = () => {
+          setCommentsView(!commentsView);
+    }
     const handleCommentSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         if(!id) {
@@ -79,22 +84,43 @@ function GameDetails(){
             <img src={game.image}/> 
             </div>
             <div className="info-game-container"> 
+            {!commentsView ? (
+            <>
             <button onClick={handleAddToFavorites}>⭐</button>
             <p><b>Release year: </b>{game.releaseYear}</p><br/>
             <p>{game.desc}</p>
-            
-            
-            </div></div>
-            <h2>Comments</h2>
-      <form onSubmit={handleCommentSubmit}>
+            </>
+            ) : (
+                <>
+                <h1>COMMENTS</h1>
+                <div className="comments-container">
+                <form onSubmit={handleCommentSubmit}>
         <textarea value={comment} onChange={(e) => setComment(e.target.value)} required />
-        <button type="submit">Add Comment</button>
+        <button type="submit" className="add-comment-button">ADD</button>
       </form>
       <ul>
         {comments.map((c, index) => (
-          <li key={index}>{c.comment}</li>
+          <span className="comment"><li key={index}><span className="username">{username}</span>: {c.comment}</li></span>
         ))}
-      </ul>
+      </ul></div>
+                </>
+            )}
+            
+            </div></div>
+
+            {commentsView ? (
+             <>
+             <button className="change-view-button" onClick={toCommentsClick}>▲ TO INFORMATION ▲</button>
+             </>
+            ) : (
+             <>
+                <button className="change-view-button" onClick={toCommentsClick}>▲ TO COMMENTS ▲</button>
+               </>
+            ) 
+            
+        
+        }
+            
         </div>
 
     )
