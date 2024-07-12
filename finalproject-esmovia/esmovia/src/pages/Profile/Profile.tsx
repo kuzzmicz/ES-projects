@@ -41,10 +41,10 @@ function Profile() {
                 <h2>Favorite pages: </h2>
                 <div className="favorite-items">
                 {favoriteCharacters.map(favorite=>(
-                    <div key={favorite.id} className="favorite-item"><img src={favorite.image}/></div>
+                    <div key={favorite.id} className="favorite-item"><img src={favorite.image} onClick={()=>navigate(`/characters/${favorite.id}`)}/></div>
                 ))}
                 {favoriteGames.map(favorite=>(
-                    <div key={favorite.id} className="favorite-item"><img src={favorite.image}/></div>
+                    <div key={favorite.id} className="favorite-item"><img src={favorite.image} onClick={()=>navigate(`/games/${favorite.id}`)}/></div>
                 ))}
                 </div>
             </div>

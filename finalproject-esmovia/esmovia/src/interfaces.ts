@@ -4,6 +4,8 @@ export interface Character {
     game: string;
     image: string;
     gender: string;
+    desc: string;
+    status: string;
   }
   
  export interface Game {
