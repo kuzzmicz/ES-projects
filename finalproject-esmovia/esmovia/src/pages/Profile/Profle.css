@@ -1,0 +1,31 @@
+.profile-design{
+  width: 100vw;
+  height:82vh;
+   background-color: red;
+display:flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+flex-direction: column;
+}
+
+.profile-container{
+    width: 100vw;
+    padding: 20px;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.user-container{
+    width: 50vw;
+    height: 60vh;
+}
+
+.user-info{
+    width: 50vw;
+    height: 60vh;
+    text-align: left;
+}
