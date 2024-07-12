@@ -1,0 +1,35 @@
+.game-details-design{
+    width: 100vw;
+    height: 82vh;
+    background-color: rgb(87, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.image-name-game-container{
+    height: 70vh;
+    width:40vw;
+    padding: 30px;
+}
+.image-name-game-container img{
+    margin-top: 30px;
+    width: 20vw;
+}
+.info-container{
+    height: 70vh;
+    width:60vw;
+    padding: 50px;
+    text-align: left;
+}
+.info-container p {
+    font-size: 2em;
+}
+.game-details-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}

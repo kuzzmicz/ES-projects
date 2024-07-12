@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import { Character } from "../../interfaces";
 import "./CharacterDetails.css";
+
 function CharacterDetails() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();

@@ -14,7 +14,9 @@ interface User {
   username: string;
   password: string;
   favorites: number[];
+  favorites_games: number[];
   comments: { characterId: number, comment: string }[];
+  comments_game: {gameId: number, comment: string}[];
 }
 const users: User[] = [];
 
@@ -129,13 +131,32 @@ app.get('/api/games/:id', (req: Request, res: Response) => {
   }
 });
 
+app.post('/api/games/:id/comment', (req: Request, res: Response) => {
+  const { userId, comment } = req.body;
+  const gameId = parseInt(req.params.id, 10);
+  const user = users.find(user => user.id === userId);
+  if (user) {
+    user.comments_game.push({ gameId, comment });
+    res.status(201).json({ message: 'Comment added successfully' });
+  } else {
+    res.status(404).json({ message: 'User not found' });
+  }
+});
+
+app.get('/api/games/:id/comments', (req: Request, res: Response) => {
+  const gameId = parseInt(req.params.id, 10);
+  const comments = users.flatMap(user => user.comments_game.filter(comment => comment.gameId === gameId));
+  res.json(comments);
+});
+
+
 app.post('/api/register', (req: Request, res: Response) => {
   const { username, password } = req.body;
   const existingUser = users.find(user => user.username === username);
   if (existingUser) {
     return res.status(400).json({ message: 'Username already exists' });
   }
-  const newUser: User = { id: uuidv4(), username, password, favorites: [], comments: [] };
+  const newUser: User = { id: uuidv4(), username, password, favorites: [], favorites_games: [], comments: [], comments_game:[]};
   users.push(newUser);
   res.status(201).json({ message: 'User registered successfully' });
 });
@@ -188,11 +209,26 @@ app.post('/api/users/:userId/favorites', (req: Request, res: Response) => {
   }
 });
 
-app.get('/api/users/:userId/favorites', (req: Request, res: Response) => {
+app.post('/api/users/:userId/favoritesgames', (req: Request, res: Response) => {
+  const { gameId } = req.body;
   const user = users.find(user => user.id === req.params.userId);
   if (user) {
-    const favoriteCharacters = characters.filter(character => user.favorites.includes(character.id));
-    res.json(favoriteCharacters);
+    if (!user.favorites_games.includes(gameId)) {
+      user.favorites_games.push(gameId);
+      res.status(201).json({ message: 'Game added to favorites' });
+    } else {
+      res.status(400).json({ message: 'Game already in favorites' });
+    }
+  } else {
+    res.status(404).json({ message: 'User not found' });
+  }
+});
+
+app.get('/api/users/:userId/favoritesgames', (req: Request, res: Response) => {
+  const user = users.find(user => user.id === req.params.userId);
+  if (user) {
+    const favoriteGames = games.filter(game => user.favorites_games.includes(game.id));
+    res.json(favoriteGames);
   } else {
     res.status(404).json({ message: 'User not found' });
   }
