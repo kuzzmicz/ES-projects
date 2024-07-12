@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { Character } from "../../interfaces";
-
+import "./CharacterDetails.css";
 function CharacterDetails() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function CharacterDetails() {
   useEffect(() => {
     if (!id) {
       console.error('Character ID is undefined');
-      navigate('/');  // Redirect or handle the undefined case
+      navigate('/');  
       return;
     }
 
@@ -72,10 +72,17 @@ function CharacterDetails() {
   }
 
   return (
-    <div>
+    <div className="character-details-design">
+      <div className="character-details-container">
+      <div className="image-name-container">
       <h1>{character.name}</h1>
-      <p>Game: {character.game}</p>
+      <img src={character.image}/>
+      </div>
+      <div className="info-container">
+      <p><b>First appearance: </b>{character.game}</p>
+      <p><b>Gender: </b>{character.gender}</p>
       <button onClick={handleAddToFavorites}>Add to Favorites</button>
+      </div></div>
       <h2>Comments</h2>
       <form onSubmit={handleCommentSubmit}>
         <textarea value={comment} onChange={(e) => setComment(e.target.value)} required />
