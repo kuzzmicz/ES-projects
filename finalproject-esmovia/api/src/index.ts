@@ -1,10 +1,22 @@
 import express, { Request, Response } from 'express';
 var cors = require('cors')
+import bodyParser from 'body-parser';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const app = express();
 app.use(cors())
+app.use(bodyParser.json());
 const port = 3000;
+
+interface User {
+  id: string;
+  username: string;
+  password: string;
+  favorites: number[];
+  comments: { characterId: number, comment: string }[];
+}
+const users: User[] = [];
 
 const characters = [
   { id: 1, name: 'Leon S. Kennedy', game: 'Resident Evil 2', image: 'https://i.pinimg.com/736x/29/a1/83/29a1831a380662b25cfc373ab44a596c.jpg', gender: "male" },
@@ -88,6 +100,96 @@ app.get('/api/games/:id', (req: Request, res: Response) => {
     res.json(game);
   } else {
     res.status(404).send('Game not found');
+  }
+});
+
+app.get('/api/characters', (req: Request, res: Response) => {
+  res.json(characters);
+});
+
+app.get('/api/games', (req: Request, res: Response) => {
+  res.json(games);
+});
+
+app.get('/api/characters/:id', (req: Request, res: Response) => {
+  const character = characters.find(c => c.id === parseInt(req.params.id, 10));
+  if (character) {
+    res.json(character);
+  } else {
+    res.status(404).send('Character not found');
+  }
+});
+
+app.get('/api/games/:id', (req: Request, res: Response) => {
+  const game = games.find(g => g.id === parseInt(req.params.id, 10));
+  if (game) {
+    res.json(game);
+  } else {
+    res.status(404).send('Game not found');
+  }
+});
+
+app.post('/api/register', (req: Request, res: Response) => {
+  const { username, password } = req.body;
+  const existingUser = users.find(user => user.username === username);
+  if (existingUser) {
+    return res.status(400).json({ message: 'Username already exists' });
+  }
+  const newUser: User = { id: uuidv4(), username, password, favorites: [], comments: [] };
+  users.push(newUser);
+  res.status(201).json({ message: 'User registered successfully' });
+});
+
+app.post('/api/login', (req: Request, res: Response) => {
+  const { username, password } = req.body;
+  const user = users.find(user => user.username === username && user.password === password);
+  if (user) {
+    res.json({ message: 'Login successful', userId: user.id });
+  } else {
+    res.status(400).json({ message: 'Invalid username or password' });
+  }
+});
+
+app.post('/api/characters/:id/comment', (req: Request, res: Response) => {
+  const { userId, comment } = req.body;
+  const characterId = parseInt(req.params.id, 10);
+  const user = users.find(user => user.id === userId);
+  if (user) {
+    user.comments.push({ characterId, comment });
+    res.status(201).json({ message: 'Comment added successfully' });
+  } else {
+    res.status(404).json({ message: 'User not found' });
+  }
+});
+
+app.get('/api/characters/:id/comments', (req: Request, res: Response) => {
+  const characterId = parseInt(req.params.id, 10);
+  const comments = users.flatMap(user => user.comments.filter(comment => comment.characterId === characterId));
+  res.json(comments);
+});
+
+app.post('/api/users/:userId/favorites', (req: Request, res: Response) => {
+  const { characterId } = req.body;
+  const user = users.find(user => user.id === req.params.userId);
+  if (user) {
+    if (!user.favorites.includes(characterId)) {
+      user.favorites.push(characterId);
+      res.status(201).json({ message: 'Character added to favorites' });
+    } else {
+      res.status(400).json({ message: 'Character already in favorites' });
+    }
+  } else {
+    res.status(404).json({ message: 'User not found' });
+  }
+});
+
+app.get('/api/users/:userId/favorites', (req: Request, res: Response) => {
+  const user = users.find(user => user.id === req.params.userId);
+  if (user) {
+    const favoriteCharacters = characters.filter(character => user.favorites.includes(character.id));
+    res.json(favoriteCharacters);
+  } else {
+    res.status(404).json({ message: 'User not found' });
   }
 });
 
