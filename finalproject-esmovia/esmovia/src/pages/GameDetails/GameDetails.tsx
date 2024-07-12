@@ -76,11 +76,13 @@ function GameDetails(){
             <div className="game-details-container">
             <div className="image-name-game-container">
             <h1>{game.title}</h1>
-            <img src={game.image}/>
+            <img src={game.image}/> 
             </div>
-            <div className="info-container">
-            <p><b>Release year: </b>{game.releaseYear}</p>
-            <button onClick={handleAddToFavorites}>Add to Favorites</button>
+            <div className="info-game-container"> 
+            <button onClick={handleAddToFavorites}>⭐</button>
+            <p><b>Release year: </b>{game.releaseYear}</p><br/>
+            <p>{game.desc}</p>
+            
             
             </div></div>
             <h2>Comments</h2>

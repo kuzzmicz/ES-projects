@@ -47,13 +47,29 @@ const characters = [
 ];
 
 const games = [
-  { id: 1, title: 'Resident Evil', releaseYear: 1996, image:  "https://upload.wikimedia.org/wikipedia/en/a/a6/Resident_Evil_1_cover.png"},
-  { id: 2, title: 'Resident Evil 2', releaseYear: 1998, image: "https://upload.wikimedia.org/wikipedia/en/4/40/NTSC_Resident_Evil_2_Cover.png"},
-  { id: 3, title: 'Resident Evil 3: Nemesis', releaseYear: 1999, image:  "https://upload.wikimedia.org/wikipedia/en/a/a5/Resident_Evil_3_Cover.jpg"},
-  { id: 4, title: 'Resident Evil Survivor', releaseYear: 2000, image: "https://upload.wikimedia.org/wikipedia/en/e/e3/RE_Survivor_front.jpg"},
-  { id: 5, title: 'Resident Evil – Code: Veronica', releaseYear: 2000, image:  "https://upload.wikimedia.org/wikipedia/en/4/44/RECV_boxart.jpg"},
-  { id: 6, title: 'Resident Evil Survivor 2 – Code: Veronica', releaseYear: 2001, image: "https://upload.wikimedia.org/wikipedia/en/c/ca/RESurvivor2CV.jpg"},
-  { id: 7, title: 'Resident Evil Gaiden', releaseYear: 2001, image:  "https://upload.wikimedia.org/wikipedia/en/d/dd/Resident_Evil_Gaiden_Boxart.gif"},
+  { id: 1, title: 'Resident Evil', releaseYear: 1996, image:  "https://upload.wikimedia.org/wikipedia/en/a/a6/Resident_Evil_1_cover.png", 
+    desc: "Resident Evil (バイオハザード, spelled Baiohazādo or simply Bio Hazard in Japan) is a survival horror game developed by Capcom and is the first game in the Resident Evil series. Originally released in 1996 for the PlayStation, it has since been ported to the Sega Saturn and PC. It was then re-released twice on the PlayStation in the form of a Director's Cut. A Game Boy Color version of Resident Evil was planned for release in 1999, but Capcom later canceled it, citing poor quality of the port. Instead, Capcom released a new game in the series for the platform, titled Resident Evil Gaiden. In 2002, a remake of the game was released for the Nintendo GameCube, featuring new graphics, voice acting, and other significant changes. A Nintendo DS port of the original, with added modes and the subtitle Deadly Silence, was released in early 2006."
+  },
+  { id: 2, title: 'Resident Evil 2', releaseYear: 1998, image: "https://upload.wikimedia.org/wikipedia/en/4/40/NTSC_Resident_Evil_2_Cover.png",
+    desc: `Resident Evil 2, known as Biohazard 2 (バイオハザード2 Baiohazādo Tsū?) in Japan, is a survival horror video game that was originally released for the PlayStation in 1998. Developed by Capcom as the second installment in the Resident Evil series, the game's story takes place two months after the events of the first game, Resident Evil, and is set in Raccoon City, a Midwestern American mountain community. The city's residents have been transformed into zombies by the t-Virus, a biological weapon developed by the pharmaceutical company Umbrella. As they escape from the city, the two protagonists, Leon S. Kennedy and Claire Redfield, encounter other survivors and are confronted by William Birkin, the mutated creator of the even more powerful G-virus, a variation of the t-Virus. The gameplay of Resident Evil 2 focuses on exploration, puzzle-solving, and combat and features typical survival horror elements such as limited saves and ammunition. The game's main difference from its predecessor is the "Zapping System," which provides each playable character with unique storylines and obstacles. Developed by a team of 40 to 50 people over the course of one year and nine months, Resident Evil 2 was directed by Hideki Kamiya and produced by Shinji Mikami. The initial version of the game, commonly referred to as BIOHAZARD 1.5, differed drastically from the released product and was scrapped at a development stage of 60-80 percent after being deemed "dull and boring" by the producer. The resulting redesign introduced different settings and a more cinematic story presentation supported by a soundtrack that employs "desperation" as an underlying theme. Resident Evil 2 received critical acclaim, with praise for its atmosphere, setting, graphics, audio, scenarios, and overall gameplay, as well as its improvements over the original game, but with some criticism towards its controls, voice acting, and certain gameplay elements. It has appeared on a number of lists of the best video games ever made. The game has become a million-seller and is the franchise's most successful title on a single platform. Years after its first release, Resident Evil 2 was included in several lists of the 100 best games. Following its initial success on the PlayStation, it was ported to Microsoft Windows, the Nintendo 64, Dreamcast, and Nintendo GameCube and was released as a modified 2.5D version for the Game.com handheld. The story of Resident Evil 2 was retold and built upon in several later games and has been adapted into a variety of licensed works. A remake of the game was released on January 25, 2019.`
+  },
+  { id: 3, title: 'Resident Evil 3: Nemesis', releaseYear: 1999, image:  "https://upload.wikimedia.org/wikipedia/en/a/a5/Resident_Evil_3_Cover.jpg", 
+    desc: `Resident Evil 3: Nemesis, known in Japan as Biohazard 3: Last Escape (バイオハザード3　ラストエスケープ Baiohazādo Surī Rasuto Esukēpu?), is a survival horror video game and the third installment in the Resident Evil series developed and published by Capcom. The game was initially released for the Sony PlayStation and was subsequently ported to the Dreamcast, Microsoft Windows, and Nintendo GameCube. It is also available for download on the PlayStation Network for use with both the PlayStation 3 and the PlayStation Portable. The game's storyline is divided into two parts: the first half takes place 24 hours before the events of Resident Evil 2, while the second half occurs two days after. Through this, the game expands upon the settings and events of the t-Virus outbreak in Raccoon City and provides a conclusion to the fate of the city and its infected population. The game's storyline served as the inspiration for the 2004 film Resident Evil: Apocalypse.`
+  },
+  { id: 4, title: 'Resident Evil Survivor', releaseYear: 2000, image: "https://upload.wikimedia.org/wikipedia/en/e/e3/RE_Survivor_front.jpg", 
+    desc: `Resident Evil Survivor, known in Japan as Biohazard Gun Survivor (バイオハザード ガンサバイバー Baiohazādo Gan Sabaibā?) and initially known as BIOHAZARD GUN SURVIVOR behind the mask (バイオハザードガンサバイバー マスクの後ろに?, Baiohazādo Gan Sabaibā masuku no ushironi) was the first Biohazard game designed to be used with the PlayStation light-gun peripheral "GunCon45". The game is a major departure from the original series, deviating from the fixed camera angles of the previous games to a first-person view. The Japanese and PAL versions of the game allowed the use of the Namco GunCon, a light gun that gave the game a more arcade feel. It was decided by Capcom U.S.A. that the American version would not allow the use of the GunCon, due to the then-recent Columbine High School massacre. The game is set in the isolated city of Sheena Island around November 1998. It was re-released in March 2001 in Japan as part of the Capcom Collection (Japanese: "Kapukore"). The game was also released for PC in Taiwan in 2002. This version allowed mouse-aiming and had graphic-filtering, although it is also known for being buggy suffering from flat lighting, messed up sounds, low-quality FMV cut-scenes compared to PS1, some enemies have messed up animations are lacking general AI scripts. This version does not use real fonts, instead, it uses images with texts and alpha transparency possibly due to the use of Chinese letters. It is also problematic in terms of installing and playing on modern systems.`
+  },
+  { id: 5, title: 'Resident Evil – Code: Veronica', releaseYear: 2000, image:  "https://upload.wikimedia.org/wikipedia/en/4/44/RECV_boxart.jpg", 
+    desc: `Resident Evil CODE:Veronica (BIOHAZARD CODE:Veronica in Japan) is a survival horror game that was originally released in 2000. Instead of being developed by Capcom, the game was outsourced and created by Nextech and Tose as a replacement for a Saturn port of Resident Evil 2, which Capcom and Nextech believed would be subpar. Originally intended as a Dreamcast-exclusive title, Sega's departure from the console industry led to a modified port of the game being released for the Dreamcast, GameCube, and PlayStation 2 the following year, titled Resident Evil CODE:Veronica X, known in Japan as BIOHAZARD CODE:Veronica 完全版 (Kanzenban, lit. "Perfect Complete Edition"). An HD remaster was released for PlayStation 3 and Xbox 360, and the PlayStation 2 version was made available as a "PS2 Classic" on PlayStation 4. Thanks to backward compatibility, the HD Xbox 360 version can be played on Xbox One and Xbox Series X/S, while the PlayStation 5 runs the emulated version from PS4. The HD remaster is also accessible through PlayStation Now. The game is set on 27–28 December 1998, three months after the events of Resident Evil 2 and Resident Evil 3: Nemesis. It is the first Resident Evil game released for a sixth-generation console and features full polygonal environments instead of the static, pre-rendered backgrounds that were characteristic of the previous installments .`
+  },
+  
+  { id: 6, title: 'Resident Evil Survivor 2 – Code: Veronica', releaseYear: 2001, image: "https://upload.wikimedia.org/wikipedia/en/c/ca/RESurvivor2CV.jpg", 
+    desc: `Resident Evil Survivor 2 CODE:Veronica (GUN SURVIVOR 2 BIOHAZARD CODE:Veronica in Japan) is a first-person shooter game by Capcom developed in conjunction with Namco exclusive to PAL regions and Japan. The game has no bearing on the Resident Evil plot, although it does feature characters, enemies, and bosses from Resident Evil CODE:Veronica. The game also features a Nemesis-T Type, which appears on the map to chase you if you run out of time.`
+  },
+  { id: 7, title: 'Resident Evil Gaiden', releaseYear: 2001, image:  "https://upload.wikimedia.org/wikipedia/en/d/dd/Resident_Evil_Gaiden_Boxart.gif", 
+    desc: `Resident Evil Gaiden (バイオハザード外伝 Baiohazado Gaiden?) is a Resident Evil game for the Game Boy Color first released on December 14, 2001. While the technical implementation of the title was done by the now defunct British company M4 Limited, two employees of Capcom were involved with the development as well. Shinji Mikami served as an adviser for the game and the story was created by Hiroki Katō, the director of Resident Evil CODE:Veronica.[1] This game is non-canon, as its plot is contradicted by the main series in key parts, and its events are ignored.
+`
+  },
   { id: 8, title: 'Resident Evil', releaseYear: 2002, image: "https://upload.wikimedia.org/wikipedia/en/a/ab/Resident_Evil_2002_cover.jpg"},
   { id: 9, title: 'Resident Evil Zero', releaseYear: 2002, image:  "https://upload.wikimedia.org/wikipedia/en/c/c6/Rezerobox.jpg"},
   { id: 10, title: 'Resident Evil: Dead Aim', releaseYear: 2003, image: "https://upload.wikimedia.org/wikipedia/en/a/a5/Residentevildeadaim.jpg"},
@@ -195,15 +211,26 @@ app.get('/api/characters/:id/comments', (req: Request, res: Response) => {
 });
 
 app.post('/api/users/:userId/favorites', (req: Request, res: Response) => {
+  const { userId } = req.params;
   const { characterId } = req.body;
-  const user = users.find(user => user.id === req.params.userId);
+
+  const user = users.find(user => user.id === userId);
   if (user) {
     if (!user.favorites.includes(characterId)) {
       user.favorites.push(characterId);
       res.status(201).json({ message: 'Character added to favorites' });
     } else {
-      res.status(400).json({ message: 'Character already in favorites' });
+      res.status(400).json({ message: 'Character is already in favorites' });
     }
+  } else {
+    res.status(404).json({ message: 'User not found' });
+  }
+});
+app.get('/api/users/:userId/favorites', (req: Request, res: Response) => {
+  const user = users.find(user => user.id === req.params.userId);
+  if (user) {
+    const favorites = characters.filter(character => user.favorites.includes(character.id));
+    res.json(favorites);
   } else {
     res.status(404).json({ message: 'User not found' });
   }

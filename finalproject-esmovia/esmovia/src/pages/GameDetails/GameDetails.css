@@ -11,21 +11,29 @@
 
 .image-name-game-container{
     height: 70vh;
-    width:40vw;
+    width:30vw;
     padding: 30px;
 }
 .image-name-game-container img{
     margin-top: 30px;
     width: 20vw;
 }
-.info-container{
-    height: 70vh;
-    width:60vw;
-    padding: 50px;
+.info-game-container{
+    height: 60vh;
+    width:70vw;
+    padding: 0px 100px 100px 0px;
     text-align: left;
+    overflow-y: scroll;
 }
-.info-container p {
+.info-game-container p {
     font-size: 2em;
+}
+
+.info-game-container button{
+    width:4vw;
+    height: 4vw;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 .game-details-container{
     display: flex;

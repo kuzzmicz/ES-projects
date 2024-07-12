@@ -57,7 +57,7 @@ function CharacterDetails() {
       console.error('Character ID is undefined');
       return;
     }
-
+  
     if (userId && character) {
       try {
         await axios.post(`http://localhost:3000/api/users/${userId}/favorites`, { characterId: character.id });
@@ -80,9 +80,10 @@ function CharacterDetails() {
       <img src={character.image}/>
       </div>
       <div className="info-container">
+      <button onClick={handleAddToFavorites}>⭐</button>
       <p><b>First appearance: </b>{character.game}</p>
       <p><b>Gender: </b>{character.gender}</p>
-      <button onClick={handleAddToFavorites}>Add to Favorites</button>
+      
       </div></div>
       <h2>Comments</h2>
       <form onSubmit={handleCommentSubmit}>
