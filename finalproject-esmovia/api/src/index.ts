@@ -213,7 +213,7 @@ app.get('/api/characters/:id/comments', (req: Request, res: Response) => {
 app.post('/api/users/:userId/favorites', (req: Request, res: Response) => {
   const { userId } = req.params;
   const { characterId } = req.body;
-
+  console.log(userId);
   const user = users.find(user => user.id === userId);
   if (user) {
     if (!user.favorites.includes(characterId)) {

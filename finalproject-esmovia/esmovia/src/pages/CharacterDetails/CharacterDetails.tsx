@@ -14,6 +14,7 @@ function CharacterDetails() {
 
   useEffect(() => {
     if (!id) {
+      console.log("Id: " + userId);
       console.error('Character ID is undefined');
       navigate('/');  
       return;

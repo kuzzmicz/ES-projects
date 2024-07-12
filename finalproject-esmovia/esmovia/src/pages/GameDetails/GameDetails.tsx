@@ -9,7 +9,7 @@ function GameDetails(){
     const navigate = useNavigate();
     const [game, setGame] = useState<Game | null>(null);
     const [comments, setComments] = useState<{gameId: number, comment: string}[]>([]);
-    const userId = localStorage.getItem('gameId');
+    const userId = localStorage.getItem('userId');
     const [comment, setComment] = useState('');
     useEffect(()=>{
     if(!id){
@@ -59,7 +59,7 @@ function GameDetails(){
 
         if(userId && game){
             try{
-                await axios.post(`http://localhost:3000/api/users/${userId}/favorites`, {gameId: game.id });
+                await axios.post(`http://localhost:3000/api/users/${userId}/favoritesGames`, {gameId: game.id });
                 alert('Character added to favorites');
             }  
             catch(error){

@@ -21,7 +21,7 @@ function Login() {
             });
             
             console.log("Login response:", response.data);
-
+            localStorage.setItem('userId', response.data.userId);
             localStorage.setItem('username', usernameInput);
             setUsername(usernameInput);
             navigate('/');
