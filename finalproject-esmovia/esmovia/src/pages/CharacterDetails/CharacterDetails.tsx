@@ -114,8 +114,10 @@ function CharacterDetails() {
         <h1>COMMENTS</h1>
         <div className="comments-container">
         <form onSubmit={handleCommentSubmit}>
+          <div className="add-comment-container">
 <textarea value={comment} onChange={(e) => setComment(e.target.value)} required />
-<button type="submit" className="add-comment-button">ADD</button>
+<button type="submit">ADD</button>
+</div>
 </form>
 <ul>
 {comments.map((c, index) => (
