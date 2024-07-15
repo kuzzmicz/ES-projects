@@ -9,7 +9,7 @@ function Header() {
 
     const handleLogout = () => {
         localStorage.removeItem('username');
-        setUsername(null);
+        setUsername("");
         navigate('/');
     };
 

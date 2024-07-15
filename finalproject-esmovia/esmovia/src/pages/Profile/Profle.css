@@ -64,3 +64,27 @@ flex-direction: column;
     height: 70vh;
     text-align: left;
 }
+
+@media (max-width: 800px){
+    .favorite-items{
+        font-size: 0.7em;
+    }
+
+    .profile-design{
+        font-size:0.5em;
+    }
+  }
+
+  @media (max-width: 1400px){
+    .favorite-items{
+        font-size: 0.8em;
+    }
+
+    .profile-design{
+        font-size:0.7em;
+    }
+
+    .favorite-items{
+        height: 20vh;
+    }
+  }

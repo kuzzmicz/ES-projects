@@ -92,3 +92,10 @@ textarea{
 li{
     list-style-type:none;
 }
+
+@media (max-height: 800px){
+    .characters-design{
+        font-size: 0.7em;
+    }
+  }
+
