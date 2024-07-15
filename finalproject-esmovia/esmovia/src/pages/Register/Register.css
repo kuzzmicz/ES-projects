@@ -37,3 +37,16 @@
       font-size: 1em;
     }
   }
+
+  @media (max-width: 800px) {
+    .register-design button {
+      font-size: 0.5em;
+    }
+    
+.register-design input {
+    font-size: 1em;
+}
+  .register-container{
+    font-size: 0.7em;
+  }
+  }
