@@ -3,6 +3,9 @@
     height: 82vh;
     background-color: grey;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .register-design input {
@@ -16,3 +19,21 @@
     height: 6vh;
     font-size: 2em;
 }
+
+.register-container{
+    width: 30vw;
+    height: 40vh;
+}
+.error-message {
+    color: rgb(255, 42, 42);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+
+@media (max-width: 1700px) {
+    .register-design button {
+      font-size: 1em;
+    }
+  }

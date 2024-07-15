@@ -14,6 +14,13 @@
     width:30vw;
     padding: 30px;
 }
+
+@media (max-width: 1200px) {
+   
+  }
+
+
+
 .image-name-game-container img{
     margin-top: 30px;
     width: 20vw;
@@ -25,9 +32,12 @@
     text-align: left;
     overflow-y: scroll;
 }
+
 .info-game-container p {
     font-size: 2em;
 }
+
+
 
 .info-game-container button{
     width:4vw;

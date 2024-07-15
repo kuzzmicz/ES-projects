@@ -1,31 +1,28 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface UserContextType {
-    username: string | null;
-    setUsername: (username: string | null) => void;
-    id: number | null;
-    setId: (id: number | null) => void;
+    username: string;
+    userId: string;
+    setUsername: (username: string) => void;
+    setUserId: (userId: string) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-    const [username, setUsername] = useState<string | null>(localStorage.getItem('username'));
-    const [id, setId] = useState<number | null>(() => {
-        const storedId = localStorage.getItem('id');
-        return storedId !== null ? Number(storedId) : null;
-    });
+export const UserProvider = ({ children }: { children: ReactNode }) => {
+    const [username, setUsername] = useState<string>('');
+    const [userId, setUserId] = useState<string>('');
 
     return (
-        <UserContext.Provider value={{ username, setUsername, id, setId }}>
+        <UserContext.Provider value={{ username, userId, setUsername, setUserId }}>
             {children}
         </UserContext.Provider>
     );
 };
 
-export const useUser = () => {
+export const useUser = (): UserContextType => {
     const context = useContext(UserContext);
-    if (!context) {
+    if (context === undefined) {
         throw new Error('useUser must be used within a UserProvider');
     }
     return context;

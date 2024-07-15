@@ -30,6 +30,15 @@ width: 95vw;
 overflow-x: auto; 
 gap: 20px;
 }
+
+
+@media (max-width: 1200px) {
+  .game-container {
+    font-size: 0.7em;
+  }
+}
+
+
 .games-design {
 font-size: 1em;
 display: flex;

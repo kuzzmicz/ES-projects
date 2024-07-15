@@ -10,32 +10,40 @@ flex-direction: column;
 }
 
 .profile-container{
+    padding: 0;
     width: 100vw;
-    padding: 20px;
-    height: 70vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
 
+}
+.favorite-item{
+    font-size: 2em
 }
 .favorite-item img{
     width: 10vw;
     height: 10vw;
     filter: brightness(50%);
 }
-
 .favorite-item img:hover{
     filter: brightness(100%)
 }
 .favorite-items{
-    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    gap:20px;
     overflow:hidden;
     width: 45vw;
-    height: 45vh;
+    height: 25vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#avatar{
+    width: 20vw;
+    height: 20vw;
 }
 .user-container img{
     flex-basis: 50%;
@@ -46,9 +54,13 @@ flex-direction: column;
     width: 50vw;
     height: 60vh;
 }
+.user-info button {
+    margin-right: 20px;
+    margin-top: 5px;
+}
 
 .user-info{
     width: 50vw;
-    height: 60vh;
+    height: 70vh;
     text-align: left;
 }

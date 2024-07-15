@@ -4,6 +4,9 @@
     background-color: rgb(173, 173, 173);
     padding: 20px;
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-design input {
@@ -16,4 +19,22 @@
     width: 10vw;
     height: 6vh;
     font-size: 2em;
+}
+
+@media (max-width: 1200px) {
+  .login-design button {
+    font-size: 1em;
+  }
+}
+
+.login-container{
+    width: 30vw;
+    height: 40vh;
+}
+
+.error-message {
+    color: rgb(255, 42, 42);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
 }

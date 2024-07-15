@@ -7,12 +7,17 @@ import axios from 'axios';
 function Login() {
     const [usernameInput, setUsernameInput] = useState('');
     const [passwordInput, setPasswordInput] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const { setUsername } = useUser();
+    const { setUsername, setUserId } = useUser();
 
     const handleLogin = async (event: React.FormEvent) => {
         event.preventDefault();
-        console.log("Login attempt:", usernameInput, passwordInput);
+
+        if (!usernameInput || !passwordInput) {
+            setErrorMessage('Both fields are required.');
+            return;
+        }
 
         try {
             const response = await axios.post('http://localhost:3000/api/login', {
@@ -20,19 +25,25 @@ function Login() {
                 password: passwordInput
             });
             
-            console.log("Login response:", response.data);
             localStorage.setItem('userId', response.data.userId);
             localStorage.setItem('username', usernameInput);
             setUsername(usernameInput);
+            setUserId(response.data.userId);
             navigate('/');
         } catch (error) {
-            console.error('Error logging in', (error as Error).message);
+            if (axios.isAxiosError(error) && error.response) {
+                setErrorMessage(error.response.data.message || 'Error logging in');
+            } else {
+                setErrorMessage('Error logging in');
+            }
         }
     };
 
     return (
         <div className="login-design">
+          <div className="login-container">
             <h1>LOGIN</h1><br/>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             <input 
                 type="text" 
                 value={usernameInput} 
@@ -48,7 +59,7 @@ function Login() {
                 required
             /><br/><br/>
             <button onClick={handleLogin}>Login</button>
-        </div>
+        </div></div>
     );
 }
 

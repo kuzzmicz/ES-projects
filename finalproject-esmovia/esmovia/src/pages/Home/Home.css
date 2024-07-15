@@ -15,6 +15,23 @@
 
   .welcome-text{
     width: 70vw;
+    font-size: 1em;
+  }
+  .home-design img {
+    width: 30vw;
+  }
+
+
+  @media (max-width: 2000px) {
+    .welcome-text{
+      font-size: 0.5em;
+    }
+
+  }
+  @media (max-height: 1000px){
+    .home-design img{
+      width: 40vh;
+    }
   }
 .home-design{
    font-size: 5em;
