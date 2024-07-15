@@ -3,9 +3,12 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: 'IndieFlower';
 }
+@font-face {
+  font-family: 'quicksand'; 
+  src: url('../src/assets/fonts/Quicksand-VariableFont_wght.ttf');
 
+}
 body{
-   
+   font-family: "quicksand";
 }
