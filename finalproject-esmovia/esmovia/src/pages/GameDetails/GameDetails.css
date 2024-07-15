@@ -80,3 +80,38 @@ textarea{
 li{
     list-style-type:none;
 }
+
+@media (max-width: 1000px){
+    .image-name-game-container{
+        font-size: 0.7em;
+    }
+    .info-game-container button{
+        font-size: 0.2em;
+    }
+  }
+  @media (max-width: 700px){
+    .image-name-game-container{
+        font-size: 0.3em;
+    }
+    .info-game-container button{
+        font-size: 0.2em;
+    }
+    .info-game-container{
+        font-size: 0.7em;
+    }
+  }
+
+  @media (max-width: 400px){
+    .image-name-game-container{
+        font-size: 0.3em;
+    }
+    .info-game-container{
+        font-size: 0.5em;
+    }
+  }
+
+  @media (max-width: 1400px){
+    .info-game-container button{
+        font-size: 0.3em;
+    }
+  }
