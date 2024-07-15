@@ -36,6 +36,14 @@
     font-size: 3em;
     height: 65vh;
 }
+
+@media (max-height: 1000px) {
+  .character-container{
+    font-size: 2em;
+  }
+
+}
+
 .character-container img{
     width: 20vw;
    height: 20vw; 

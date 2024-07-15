@@ -6,6 +6,7 @@ export interface Character {
     gender: string;
     desc: string;
     status: string;
+    rating: number;
   }
   
  export interface Game {
@@ -13,5 +14,6 @@ export interface Character {
     title: string;
     releaseYear: number;
     image:string;
-    desc: string;
+    desc: string; 
+    rating: number;
   }
