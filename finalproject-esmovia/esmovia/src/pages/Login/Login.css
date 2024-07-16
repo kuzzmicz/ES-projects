@@ -38,3 +38,23 @@
     font-weight: bold;
     margin-bottom: 1em;
 }
+
+
+@media (max-width: 1700px) {
+    .login-design button {
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .login-design button {
+      font-size: 0.5em;
+    }
+    
+.login-design input {
+    font-size: 1em;
+}
+
+
+  
+  }
