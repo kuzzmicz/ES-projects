@@ -1,5 +1,8 @@
 <img width="751" alt="main" src="https://github.com/kuzzmicz/ES-projects/assets/59771476/88ff81d5-2914-480e-9dfc-a6f6f41b80c7">
 
+## 🔻ABOUT PROJECT🔻
+A SPA aplication about my best-loved game-franchise Resident Evil. I made my own REST API with express and ts-node, because i couldn’t find any suitable open source RE API on internet. There are register, login, home, characters and games pages. And when we log in, we will have another page - profile. There are characters/games and if we click on container with character/game, we will be redirected to character/game details page. Also we can leave a comment on every character and game page. On the top of page, we can see a star that is responsible for adding page to our favourites. Also we can remove it from there.
+
 ## 🔻USED TECHNOLOGIES🔻
 ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
